@@ -28,6 +28,16 @@ Features
 
 * TODO
 
+
+Usage
+-----
+
+Example usage:
+
+```
+ubuntu-manifest-archive-diff --manifest-filename ./jammy-20230112-minimal.manifest --architecture=amd64 --series=jammy --archive-manifest-filename 20231102-jammy-amd64-archive.manifest
+```
+
 Credits
 -------
 
