@@ -173,9 +173,9 @@ def get_archive_versions(series, binary_package_names=[], architecture="amd64", 
                     binary_package_versions_found_in_archive.append(archive_binary.binary_package_version)
         # find the max debian package version from the binary_package_versions_found_in_archive list
         # and add to manifest_archive_versions
-        max_version = "0.0.0"
+        max_version = None
         for binary_package_version_found_in_archive in binary_package_versions_found_in_archive:
-            if debian_support.version_compare(binary_package_version_found_in_archive, max_version) > 0:
+            if debian_support.version_compare(binary_package_version_found_in_archive, max_version) > 0 or max_version is None:
                 max_version = binary_package_version_found_in_archive
         manifest_archive_versions.append((binary_package_name, max_version))
         print(f"Max version of package {binary_package_name} found in archive is {max_version}")
